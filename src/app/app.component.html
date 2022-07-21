@@ -1,0 +1,29 @@
+<div class="heading text-center bg-info p3 mb-4">
+  <h1>World Countries Data</h1>
+  <p>Currently we have 250 countries</p>
+</div>
+
+
+<div class="container">
+  <div class="row mb-5">
+    <div class="col-sm-8 offset-sm-2">
+      <div class="searchBox">
+        <input type="search" #event  placeholder="search Countries  bye name, city and langugages" (keyup)="OnSearch(event.value)"  class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <ul class="options">
+        <li><a href="javascript:;" class="btn btn-success mx-2 px-5" (click)="onclickName()">NAME</a></li>
+        <li><a href="javascript:;" class="btn btn-success mx-2 px-5" (click)="onclickCapital()">CAPITAL</a></li>
+        <li><a href="javascript:;" class="btn btn-success mx-2 px-5" (click)="onclickPopulstion()">POPULATION</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6" *ngFor="let country of countriesArray">
+      <app-country-data [country]="country"></app-country-data>
+    </div>
+  </div>
+</div>
